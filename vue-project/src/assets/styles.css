@@ -1,0 +1,198 @@
+/* ── Variables globales ───────────────────────────────────────── */
+:root {
+  --terracotta: #b15838;
+  --terracotta-deep: #8e3f24;
+  --terracotta-soft: #d68a6a;
+  --sand: #e8d9c0;
+  --sand-light: #f4ead7;
+  --cream: #faf5ec;
+  --ivory: #fbf8f1;
+  --charcoal: #1f1815;
+  --charcoal-soft: #3d342e;
+  --muted: #7a6f63;
+  --sage: #6b7a55;
+  --sage-soft: #c5cdb3;
+  --line: #e5dccb;
+  --shadow-sm: 0 1px 3px rgba(31, 24, 21, 0.08);
+  --shadow: 0 8px 30px rgba(31, 24, 21, 0.08);
+  --shadow-lg: 0 20px 60px rgba(31, 24, 21, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--ivory);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* ── Tipografía utilitaria ────────────────────────────────────── */
+.serif {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+/* ── Icon helper ──────────────────────────────────────────────── */
+.icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+
+/* ── Secciones base ───────────────────────────────────────────── */
+section {
+  padding: 110px 5vw;
+}
+
+.section-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.section-head {
+  margin-bottom: 4rem;
+  max-width: 720px;
+}
+
+.section-head .eyebrow {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--charcoal);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.section-title .italic {
+  color: var(--terracotta);
+}
+
+.section-sub {
+  color: var(--charcoal-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+  max-width: 580px;
+}
+
+/* ── Botones ──────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 0.95rem 1.6rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--terracotta);
+  color: var(--ivory);
+}
+
+.btn-primary:hover {
+  background: var(--terracotta-deep);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1px solid var(--charcoal);
+}
+
+.btn-secondary:hover {
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+/* ── Reveal animations ────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-children.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+.stagger-children.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.08s; }
+.stagger-children.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.16s; }
+.stagger-children.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.24s; }
+.stagger-children.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.32s; }
+.stagger-children.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.4s; }
+.stagger-children.visible > *:nth-child(7) { opacity: 1; transform: none; transition-delay: 0.48s; }
+.stagger-children.visible > *:nth-child(8) { opacity: 1; transform: none; transition-delay: 0.56s; }
+.stagger-children.visible > *:nth-child(n + 9) { opacity: 1; transform: none; transition-delay: 0.64s; }
+
+/* ── Progress bar ─────────────────────────────────────────────── */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  z-index: 999;
+  background: var(--terracotta);
+  width: 0%;
+  transition: width 0.1s;
+}
