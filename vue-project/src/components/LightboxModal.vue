@@ -23,7 +23,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKey))
     <button class="lightbox-close" @click="close" aria-label="Cerrar">
       <svg class="icon" style="width: 18px; height: 18px"><use href="#i-x" /></svg>
     </button>
-    <img :src="state.src" alt="" />
+    <img v-if="state.src" :src="state.src" alt="" />
     <div class="lightbox-caption">{{ state.cap }}</div>
     <div class="lightbox-nav">
       <button class="lightbox-nav-btn" @click="nav(-1)" aria-label="Anterior">

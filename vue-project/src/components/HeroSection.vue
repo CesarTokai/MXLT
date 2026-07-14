@@ -1,6 +1,6 @@
 <script setup>
-// Imagen del hero — Taxco, Guerrero
-const heroImage = 'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=900&q=85'
+// Imagen del hero — Taxco, Guerrero (local, misma que la galería)
+import heroImage from '../assets/galeria/taxco.jpg'
 </script>
 
 <template>

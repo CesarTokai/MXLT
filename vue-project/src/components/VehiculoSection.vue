@@ -202,4 +202,17 @@ function openImg(idx) {
     height: 400px;
   }
 }
+
+@media (max-width: 480px) {
+  .vehiculo-specs {
+    grid-template-columns: 1fr;
+  }
+  .vehiculo-spec:nth-child(odd) {
+    padding-right: 0;
+    border-right: none;
+  }
+  .vehiculo-spec:nth-child(even) {
+    padding-left: 0;
+  }
+}
 </style>
