@@ -57,7 +57,7 @@ Destino: ${form.destino || 'Por definir'}
 Fecha: ${form.fecha || 'Por definir'}
 Pasajeros: ${form.pasajeros}
 Nombre: ${form.nombre}
-Tel: ${form.tel}${form.notas ? '\nNotas: ' + form.notas : ''}
+Tel: ${form.tel}${form.como ? '\nNos encontró por: ' + form.como : ''}${form.notas ? '\nNotas: ' + form.notas : ''}
 
 Gracias.`
   waLink.value = `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(msg)}`
@@ -237,7 +237,7 @@ function stepClass(i) {
           Tu solicitud está preparada. Haz clic abajo para enviarla por WhatsApp — te respondemos en
           menos de una hora.
         </p>
-        <a :href="waLink" target="_blank" class="btn btn-primary" style="background: var(--charcoal)">
+        <a :href="waLink" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: var(--charcoal)">
           Abrir WhatsApp
           <svg class="icon" style="width: 16px"><use href="#i-wa" /></svg>
         </a>

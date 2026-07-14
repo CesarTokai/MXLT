@@ -1,6 +1,15 @@
 <script setup>
-import { inject } from 'vue'
-const config = inject('config')
+import { ref } from 'vue'
+
+const links = [
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#vehiculo', label: 'Unidad' },
+  { href: '#destinos', label: 'Destinos' },
+  { href: '#cotizador', label: 'Cotizar' },
+  { href: '#faq', label: 'FAQ' }
+]
+
+const menuOpen = ref(false)
 </script>
 
 <template>
@@ -10,13 +19,26 @@ const config = inject('config')
       <span class="sub">Morelos · Agencia</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#vehiculo">Unidad</a></li>
-      <li><a href="#destinos">Destinos</a></li>
-      <li><a href="#cotizador">Cotizar</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li v-for="l in links" :key="l.href"><a :href="l.href">{{ l.label }}</a></li>
     </ul>
-    <a href="#cotizador" class="nav-cta">Reservar</a>
+    <div class="nav-right">
+      <a href="#cotizador" class="nav-cta">Reservar</a>
+      <button
+        class="nav-burger"
+        :aria-expanded="menuOpen"
+        aria-label="Abrir menú"
+        @click="menuOpen = !menuOpen"
+      >
+        <svg class="icon" style="width: 20px; height: 20px">
+          <use :href="menuOpen ? '#i-x' : '#i-menu'" />
+        </svg>
+      </button>
+    </div>
+    <ul class="nav-mobile" :class="{ open: menuOpen }">
+      <li v-for="l in links" :key="l.href">
+        <a :href="l.href" @click="menuOpen = false">{{ l.label }}</a>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -115,9 +137,72 @@ nav {
   transform: translateY(-1px);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-burger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--charcoal);
+}
+
+.nav-burger .icon {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+  flex-direction: column;
+  padding: 0.6rem 5vw 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.nav-mobile li a {
+  display: block;
+  padding: 0.9rem 0;
+  color: var(--charcoal-soft);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-mobile li:last-child a {
+  border-bottom: none;
+}
+
+.nav-mobile li a:hover {
+  color: var(--terracotta);
+}
+
 @media (max-width: 860px) {
   .nav-links {
     display: none;
+  }
+  .nav-burger {
+    display: flex;
+  }
+  .nav-mobile.open {
+    display: flex;
   }
 }
 </style>

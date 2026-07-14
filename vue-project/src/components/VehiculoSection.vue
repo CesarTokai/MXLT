@@ -1,9 +1,9 @@
 <script setup>
 import { inject } from 'vue'
 const { open: openLightbox } = inject('lightbox')
-import urvan1 from '../assets/imganes/urvan1.jpg'
-import urvan2 from '../assets/imganes/urvan2.jpg'
-import urvan3 from '../assets/imganes/urvan3.jpg'
+import urvan1 from '../assets/imagenes/urvan1.jpg'
+import urvan2 from '../assets/imagenes/urvan2.jpg'
+import urvan3 from '../assets/imagenes/urvan3.jpg'
 
 const galleryImgs = [
   {

@@ -17,7 +17,7 @@ export const faqs = [
   },
   {
     q: '¿Viajan a cualquier parte de México?',
-    a: 'Hemos recorrido la mayoría de los estados de la República, llegando incluso a la frontera México-Belice. Si tienes un destino específico, lo cotizamos.'
+    a: 'Hemos recorrido la mayoría de los estados de la República, llegando incluso a la frontera México-Guatemala. Si tienes un destino específico, lo cotizamos.'
   },
   {
     q: '¿Tienen seguro de viajero?',

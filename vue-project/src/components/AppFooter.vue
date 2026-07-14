@@ -66,10 +66,10 @@ const config = inject('config')
           © {{ new Date().getFullYear() }} México Lindo Tours Morelos · Todos los derechos reservados
         </div>
         <div class="footer-social">
-          <a :href="`https://wa.me/${config.whatsapp}`" target="_blank" title="WhatsApp">
+          <a :href="`https://wa.me/${config.whatsapp}`" target="_blank" rel="noopener noreferrer" title="WhatsApp">
             <span class="ico"><svg style="width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.6"><use href="#i-wa" /></svg></span>
           </a>
-          <a :href="config.facebook" target="_blank" title="Facebook">
+          <a :href="config.facebook" target="_blank" rel="noopener noreferrer" title="Facebook">
             <span class="ico"><svg style="width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.6"><use href="#i-fb" /></svg></span>
           </a>
           <a href="mailto:contacto@mexicolindotours.mx" title="Email">

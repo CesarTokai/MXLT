@@ -1,5 +1,5 @@
 <script setup>
-import { ref, provide } from 'vue'
+import { ref, provide, onMounted, onUnmounted } from 'vue'
 import { useReveal } from './composables/useReveal'
 
 import SvgSprite from './components/icons/SvgSprite.vue'
@@ -62,7 +62,8 @@ function onScroll() {
   const bar = document.getElementById('progress-bar')
   if (bar) bar.style.width = p + '%'
 }
-window.addEventListener('scroll', onScroll, { passive: true })
+onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
+onUnmounted(() => window.removeEventListener('scroll', onScroll))
 </script>
 
 <template>

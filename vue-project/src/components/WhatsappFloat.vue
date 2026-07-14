@@ -7,6 +7,7 @@ const config = inject('config')
   <a
     :href="`https://wa.me/${config.whatsapp}`"
     target="_blank"
+    rel="noopener noreferrer"
     class="whatsapp-float"
     title="WhatsApp"
   >

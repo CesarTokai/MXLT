@@ -1,13 +1,12 @@
 <script setup>
 const items = [
   '14 pasajeros por unidad',
-  '40 estados recorridos',
-  'Más de 1000 viajes',
+  '30+ estados recorridos',
+  'Más de 100 viajes',
   'Frontera México–Guatemala',
   'Grupos privados',
   'Traslados hacia el aeropuerto',
-    'Viajes estudiantiles',
-
+  'Viajes estudiantiles'
 ]
 // Repetimos para crear loop infinito visualmente continuo
 const looped = [...items, ...items]

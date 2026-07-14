@@ -1,6 +1,7 @@
 /* ── Variables globales ───────────────────────────────────────── */
 :root {
   --terracotta: #b15838;
+  --terracotta-rgb: 177, 88, 56;
   --terracotta-deep: #8e3f24;
   --terracotta-soft: #d68a6a;
   --sand: #e8d9c0;

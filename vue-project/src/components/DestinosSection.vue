@@ -27,7 +27,7 @@ function filterLabel(f) {
           Hemos llegado <span class="italic">a casi todos lados</span>.
         </h2>
         <p class="section-sub">
-          Desde balnearios cercanos a Morelos hasta la frontera México-Belice. Si tu destino no
+          Desde balnearios cercanos a Morelos hasta la frontera México-Guatemala. Si tu destino no
           aparece aquí, lo cotizamos.
         </p>
       </div>

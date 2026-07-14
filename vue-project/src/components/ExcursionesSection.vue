@@ -1,11 +1,12 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, inject } from 'vue'
 import { excursionesLista, filtrosExcursiones } from '../data/excursiones'
 
+const config = inject('config')
 const activeFilter = ref('all')
 
 // Carga dinámicamente todas las imágenes de la carpeta
-const imagenes = import.meta.glob('../assets/imganes/*.jpg', { eager: true })
+const imagenes = import.meta.glob('../assets/imagenes/*.jpg', { eager: true })
 
 const excursiones = computed(() =>
   excursionesLista
@@ -19,7 +20,7 @@ const excursiones = computed(() =>
 
 function getImageUrl(filename) {
   if (!filename) return null
-  const path = `../assets/imganes/${filename}`
+  const path = `../assets/imagenes/${filename}`
   const img = imagenes[path]
   return img ? img.default : null
 }
@@ -32,6 +33,11 @@ function filterLabel(f) {
 function formatCosto(costo) {
   if (!costo) return 'Consulta'
   return `$${costo}`
+}
+
+function waConsulta(excursion) {
+  const msg = `Hola! Me interesa la excursión "${excursion.titulo}" (${excursion.destino}). ¿Tienen próximas fechas disponibles?`
+  return `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(msg)}`
 }
 </script>
 
@@ -150,9 +156,10 @@ function formatCosto(costo) {
 
             <!-- Botón contacto -->
             <a
-              href="#"
+              :href="waConsulta(excursion)"
+              target="_blank"
+              rel="noopener noreferrer"
               class="card-cta"
-              @click.prevent="$emit('contact')"
             >
               Consultar próximas fechas
               <svg style="width: 16px; height: 16px; fill: currentColor;">
@@ -431,7 +438,7 @@ function formatCosto(costo) {
 }
 
 .card-cta:hover {
-  background: var(--terracotta-dark);
+  background: var(--terracotta-deep);
   transform: translateX(2px);
 }
 

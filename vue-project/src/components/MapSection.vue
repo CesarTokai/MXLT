@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { destinosLista } from '../data/destinos'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -80,6 +80,13 @@ onMounted(() => {
   })
     .bindPopup('<strong>Michoacán</strong><br>Lázaro Cárdenas (Costa)')
     .addTo(map)
+})
+
+onUnmounted(() => {
+  if (map) {
+    map.remove()
+    map = null
+  }
 })
 </script>
 

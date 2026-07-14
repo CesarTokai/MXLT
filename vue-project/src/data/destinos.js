@@ -17,7 +17,7 @@ export const destinosLista = [
   { name: 'Xochimilco', region: 'CDMX', lat: 19.2782, lng: -99.0789 },
   { name: 'Chapultepec', region: 'CDMX', lat: 19.4161, lng: -99.1834 },
   { name: 'Benito Juárez (Aeropuerto)', region: 'CDMX', lat: 19.4361, lng: -99.0724 },
-  { name: 'AIFA (Aeropuerto)', region: 'Edo. Méx.', lat: 19.0316, lng: -99.3583 },
+  { name: 'AIFA (Aeropuerto)', region: 'Edo. Méx.', lat: 19.7456, lng: -99.0155 },
   { name: 'Atlixco', region: 'Puebla', lat: 18.9506, lng: -98.2432 },
   { name: 'Sierra Gorda de Querétaro', region: 'Querétaro', lat: 20.8, lng: -99.5 },
   { name: 'Jojutla', region: 'Morelos', lat: 18.5633, lng: -99.2833 },
@@ -28,15 +28,24 @@ export const destinosLista = [
   { name: 'El Rodeo', region: 'Morelos', lat: 18.8167, lng: -99.35 }
 ]
 
+import imgTaxco from '../assets/galeria/taxco.jpg'
+import imgAcapulco from '../assets/galeria/acapulco.jpg'
+import imgCuernavaca from '../assets/galeria/cuernavaca.jpg'
+import imgNevado from '../assets/galeria/nevado-toluca.jpg'
+import imgGrutas from '../assets/galeria/grutas-cacahuamilpa.jpg'
+import imgCdmx from '../assets/galeria/cdmx.jpg'
+import imgMilCascadas from '../assets/galeria/mil-cascadas.jpg'
+import imgMalinalco from '../assets/galeria/malinalco.jpg'
+
 export const galeria = [
-  { name: 'Taxco', region: 'Guerrero', img: 'https://www.mexicodesconocido.com.mx/wp-content/uploads/2020/07/Taxco.jpg' },
-  { name: 'Acapulco', region: 'Guerrero', img: 'https://www.visit-mexico.mx/wp-content/uploads/2021/01/Guerrero-Acapulco-Cover-01.jpg' },
-  { name: 'Cuernavaca', region: 'Morelos', img: 'https://rh-destinations.com/wp-content/uploads/2020/11/RH_COLLAGE_CUERNAVACA.jpg' },
-  { name: 'Nevado de Toluca', region: 'Estado de México', img: 'https://tipsparatuviaje.com/wp-content/uploads/2019/10/a-que-distancia-esta-el-nevado-de-toluca-de-ciudad-de-mexico.jpg' },
-  { name: 'Grutas de Cacahuamilpa', region: 'Guerrero', img: 'https://as1.ftcdn.net/v2/jpg/03/08/80/86/1000_F_308808640_6gKHus8NDVao6ERtvN9WXeNMAUvzsnBo.jpg' },
-  { name: 'Ciudad de México', region: 'CDMX', img: 'https://traveler.marriott.com/es/wp-content/uploads/sites/2/2018/05/SI_MEXIS_Angel_Independencia_1920x1080.jpg' },
-  { name: 'Mil Cascadas', region: 'Guerrero', img: 'https://gourmetdemexico.com.mx/wp-content/uploads/2024/06/comala-3.jpg' },
-  { name: 'Malinalco', region: 'Estado de México', img: 'https://www.gob.mx/cms/uploads/article/main_image/29120/W0135-Malinalco-Cauachalli-Temple.jpg' }
+  { name: 'Taxco', region: 'Guerrero', img: imgTaxco },
+  { name: 'Acapulco', region: 'Guerrero', img: imgAcapulco },
+  { name: 'Cuernavaca', region: 'Morelos', img: imgCuernavaca },
+  { name: 'Nevado de Toluca', region: 'Estado de México', img: imgNevado },
+  { name: 'Grutas de Cacahuamilpa', region: 'Guerrero', img: imgGrutas },
+  { name: 'Ciudad de México', region: 'CDMX', img: imgCdmx },
+  { name: 'Mil Cascadas', region: 'Guerrero', img: imgMilCascadas },
+  { name: 'Malinalco', region: 'Estado de México', img: imgMalinalco }
 ]
 
 export const filtros = ['all', 'Morelos', 'Guerrero', 'Edo. Méx.', 'CDMX', 'Puebla', 'Querétaro']

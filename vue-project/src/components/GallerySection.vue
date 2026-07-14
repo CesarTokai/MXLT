@@ -29,7 +29,7 @@ function onResize() { goTo(cur.value) }
 
 function openImg(i) {
   const images = galeria.map((d) => ({
-    src: `${d.img}?w=1400&q=90`,
+    src: d.img,
     cap: `${d.name}, ${d.region}`
   }))
   openLightbox({ images, idx: i })
@@ -74,7 +74,7 @@ onUnmounted(() => {
           class="dest-card"
           @click="openImg(i)"
         >
-          <img :src="`${dest.img}?w=700&q=85`" :alt="dest.name" />
+          <img :src="dest.img" :alt="dest.name" loading="lazy" />
           <div class="dest-card-zoom">
             <svg class="icon" style="width: 16px; height: 16px"><use href="#i-search" /></svg>
           </div>

@@ -2,10 +2,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const stats = [
-  { target: 40, suffix: '+', label: 'Estados recorridos' },
+  { target: 30, suffix: '+', label: 'Estados recorridos' },
   { target: 100, suffix: '+', label: 'Viajes realizados' },
   { target: 14, suffix: '', label: 'Pasajeros · unidad' },
-  { target: 500, suffix: '%', label: 'Recomendados' }
+  { target: 100, suffix: '%', label: 'Recomendados' }
 ]
 
 // Estado reactivo de cada contador
@@ -17,6 +17,7 @@ function setRef(el, idx) {
 }
 
 let observer = null
+const timers = []
 
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -31,6 +32,7 @@ onMounted(() => {
           counts.value[idx] = Math.min(counts.value[idx] + step, target)
           if (counts.value[idx] >= target) clearInterval(timer)
         }, 16)
+        timers.push(timer)
         observer.unobserve(entry.target)
       })
     },
@@ -41,6 +43,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   if (observer) observer.disconnect()
+  timers.forEach(clearInterval)
 })
 </script>
 

@@ -14,7 +14,7 @@ const config = inject('config')
         Grupos privados de hasta 14 pasajeros. Cotización sin compromiso en minutos.
       </p>
       <div class="cta-btns">
-        <a :href="`https://wa.me/${config.whatsapp}`" target="_blank" class="btn btn-primary">
+        <a :href="`https://wa.me/${config.whatsapp}`" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <svg class="icon" style="width: 16px; height: 16px"><use href="#i-wa" /></svg>
           Escribir por WhatsApp
         </a>

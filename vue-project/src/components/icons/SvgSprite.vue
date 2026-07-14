@@ -70,6 +70,9 @@
       <symbol id="i-x" viewBox="0 0 24 24">
         <path d="M18 6L6 18M6 6l12 12" />
       </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </symbol>
       <symbol id="i-check" viewBox="0 0 24 24">
         <path d="M20 6L9 17l-5-5" />
       </symbol>

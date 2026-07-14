@@ -22,6 +22,7 @@ function toggle(i) {
         <a
           :href="`https://wa.me/${config.whatsapp}`"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn btn-primary"
           style="margin-top: 1.6rem"
         >
