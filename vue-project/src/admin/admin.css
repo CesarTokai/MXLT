@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset mínimo scoped al admin (preflight global desactivado para no
+   pisar los estilos del landing público). */
+.admin-root,
+.admin-root *,
+.admin-root *::before,
+.admin-root *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+.admin-root h1,
+.admin-root h2,
+.admin-root h3,
+.admin-root h4,
+.admin-root p,
+.admin-root ul,
+.admin-root figure {
+  margin: 0;
+  padding: 0;
+}
+.admin-root ul {
+  list-style: none;
+}
+.admin-root a {
+  text-decoration: none;
+  color: inherit;
+}
+.admin-root button {
+  font: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
+.admin-root input,
+.admin-root select {
+  font: inherit;
+  color: inherit;
+}
+.admin-root img {
+  display: block;
+  max-width: 100%;
+}
+.admin-root table {
+  border-collapse: collapse;
+}
+.admin-root th,
+.admin-root td {
+  text-align: inherit;
+}
+
+.admin-root {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fb;
+  color: #191c1e;
+  min-height: 100vh;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Scrollbar de tablas/gantt */
+.admin-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.admin-scroll::-webkit-scrollbar-track {
+  background: #f2f4f6;
+  border-radius: 4px;
+}
+.admin-scroll::-webkit-scrollbar-thumb {
+  background: #c5c6ce;
+  border-radius: 4px;
+}
+.admin-scroll::-webkit-scrollbar-thumb:hover {
+  background: #75777e;
+}
