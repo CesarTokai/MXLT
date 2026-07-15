@@ -3,34 +3,29 @@
 @tailwind utilities;
 
 /* Reset mínimo scoped al admin (preflight global desactivado para no
-   pisar los estilos del landing público). */
-.admin-root,
-.admin-root *,
-.admin-root *::before,
-.admin-root *::after {
+   pisar los estilos del landing público). Todo va en :where() para que
+   tenga especificidad cero y cualquier utilidad de Tailwind gane. */
+:where(.admin-root),
+:where(.admin-root *),
+:where(.admin-root *)::before,
+:where(.admin-root *)::after {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
-  border-color: currentColor;
+  border-color: #c5c6ce;
 }
-.admin-root h1,
-.admin-root h2,
-.admin-root h3,
-.admin-root h4,
-.admin-root p,
-.admin-root ul,
-.admin-root figure {
+:where(.admin-root h1, .admin-root h2, .admin-root h3, .admin-root h4, .admin-root p, .admin-root ul, .admin-root figure) {
   margin: 0;
   padding: 0;
 }
-.admin-root ul {
+:where(.admin-root ul) {
   list-style: none;
 }
-.admin-root a {
+:where(.admin-root a) {
   text-decoration: none;
   color: inherit;
 }
-.admin-root button {
+:where(.admin-root button) {
   font: inherit;
   background: none;
   border: none;
@@ -38,20 +33,18 @@
   cursor: pointer;
   color: inherit;
 }
-.admin-root input,
-.admin-root select {
+:where(.admin-root input, .admin-root select) {
   font: inherit;
   color: inherit;
 }
-.admin-root img {
+:where(.admin-root img) {
   display: block;
   max-width: 100%;
 }
-.admin-root table {
+:where(.admin-root table) {
   border-collapse: collapse;
 }
-.admin-root th,
-.admin-root td {
+:where(.admin-root th, .admin-root td) {
   text-align: inherit;
 }
 

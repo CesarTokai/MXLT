@@ -52,7 +52,7 @@ const items = [
           :class="
             $route.name === item.name
               ? 'bg-secondary-container/10 border-l-4 border-secondary text-secondary-fixed font-semibold'
-              : 'text-on-primary/70 hover:text-on-primary hover:bg-primary-container'
+              : 'text-on-primary/80 hover:text-on-primary hover:bg-primary-container'
           "
           @click="$emit('close')"
         >
@@ -69,7 +69,7 @@ const items = [
         :class="
           $route.name === 'configuracion'
             ? 'bg-secondary-container/10 border-l-4 border-secondary text-secondary-fixed font-semibold'
-            : 'text-on-primary/70 hover:text-on-primary hover:bg-primary-container'
+            : 'text-on-primary/80 hover:text-on-primary hover:bg-primary-container'
         "
         @click="$emit('close')"
       >
